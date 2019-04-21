@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    ///BOX SHADOW
+--box-shadow: .2rem .2rem .5rem var(--color-primary-dark);
+
+ --color-primary: #dddddd;
+ --color-primary-light: #eeeeee;
+ --color-primary-dark: #afabab;
+ --color-grey-dark: #7a7a7a;
+ --color-secondary: mediumSeaGreen;
+
+ ///PADDING
+ --padding-small: 1.2rem;
+ --padding-xsmall: .8rem 1.2rem;
+ --padding-nav: 2rem 1.2rem;
+
+ ///FONT
+ --font-small: 1.8rem;
+}
+
+::selection {
+    // color: ;
+    // bgc: ;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #000000;
+    background-color: mediumSeaGreen
+}

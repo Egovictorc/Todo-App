@@ -1,0 +1,17 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgba(0,0,0, .8);
+    color: var(--color-primary-dark);
+    
+    & > p {
+        text-align: center;
+        min-height: 6vh;
+
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+    
+}

@@ -1,0 +1,208 @@
+.container {
+    width: 100vw;
+}
+
+///COMPONENTS
+.active {
+    color: green;
+}
+
+.todo {
+    box-shadow: var(--box-shadow);
+    margin-right: auto;
+    margin-left: auto;
+    //min-width: 36rem;
+    width: 90vw;
+    min-height: 70vh;
+    max-width: 70rem;
+    
+    background-color: var(--color-grey-dark);
+
+    &__list {
+        padding: 2vh 2vw 4vh;
+    }
+
+    &__item {   
+        margin: 0 auto; 
+        background-color: var(--color-primary-light);
+        list-style-type: none;      
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--color-grey-dark);      
+        }
+
+        &[data-id*="input"] {
+            margin-bottom: 2rem;
+            flex-direction: column;
+            align-items: stretch;
+            padding: var(--padding-small) 0;
+        }
+
+        &--none {
+            min-height: 8vh;
+        }
+
+    }
+    &__input {
+        //height: 80%;
+        min-width: 25.8rem;
+        width: 80%;
+        align-self: center;
+        min-height: 8vh;
+        padding: var(--padding-small);
+        font-size: var(--font-small);
+        border: 1px solid var(--color-primary);
+        border-radius: .5rem;
+
+        &:focus {
+            border: 1px solid var(--color-secondary);
+        }
+       
+    }
+
+    &__index {
+        
+        text-align: center;
+        align-self: stretch;
+        flex: 10% 0 0;
+        //background-color: red;
+        //border-right: 1px solid var(--color-grey-dark);
+        ///VERTICALLY CENTER TODO INDEX
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__complete {
+        
+        flex: 8% 0 0;
+        align-self: stretch;
+        //background-color: red;
+        border-right: 1px solid var(--color-grey-dark);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__content {
+        flex-basis: 60%;
+        flex-grow: 1;
+        background-color: var(--color-primary);
+        align-self: center;
+        min-height: 8vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: var(--padding-small);
+    }
+
+    &__delete {
+        grid-column: -2 / -1;        
+        align-self: stretch;
+        border: none;
+        cursor: pointer;
+        flex-basis: 10%;    
+        text-transform: capitalize;
+    }
+
+    &__required {
+        color: red;
+        padding-left: 10%;
+    }
+
+    &__reset {
+        text-transform: capitalize;
+        display: block;
+        padding: 2vmin;
+        margin-left: auto;
+        margin-right: 2vw;
+        border: none;
+        cursor: pointer;
+        transition: .5s ease all;
+
+        &:hover {
+            transform: perspective(15rem) translateZ(.7rem);
+        }
+
+    }   
+}
+
+
+/////COMPONENTS
+
+
+    ///NAVIGATION
+.nav {
+    
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        
+    }
+    &__item {
+        // ACTIVE LINK TAG (FOR REACTJS LINK)
+        & > .active {
+            color: var(--color-grey-dark);
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: var(--color-primary);
+        display: block;
+        padding: var(--padding-xsmall);
+        transition: .4s ease all;
+     
+        &:hover {
+            color: var(--color-grey-dark);
+        }
+    }   
+}
+
+.home,
+.about,
+.contact,
+.blog {
+    text-align: center;
+
+    &__heading {
+        color: var(--color-primary);
+    }
+
+    &__rotate {
+        width: 7rem;
+        height: 7rem;
+        display: block;
+        border: .7rem solid var(--color-primary);
+        border-right: dotted;
+        border-radius: 50%;
+        animation: rotate-circle;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    @keyframes rotate-circle {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+
+    &__relax {
+        min-height: 60vh;
+        min-width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.home {
+    &__create-todo {
+        text-transform: capitalize;
+    }
+}

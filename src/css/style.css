@@ -1,0 +1,223 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --box-shadow: .2rem .2rem .5rem var(--color-primary-dark);
+  --color-primary: #dddddd;
+  --color-primary-light: #eeeeee;
+  --color-primary-dark: #afabab;
+  --color-grey-dark: #7a7a7a;
+  --color-secondary: mediumSeaGreen;
+  --padding-small: 1.2rem;
+  --padding-xsmall: .8rem 1.2rem;
+  --padding-nav: 2rem 1.2rem;
+  --font-small: 1.8rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #000000;
+  background-color: mediumSeaGreen;
+}
+
+.container {
+  width: 100vw;
+}
+
+.active {
+  color: green;
+}
+
+.todo {
+  box-shadow: var(--box-shadow);
+  margin-right: auto;
+  margin-left: auto;
+  width: 90vw;
+  min-height: 70vh;
+  max-width: 70rem;
+  background-color: var(--color-grey-dark);
+}
+.todo__list {
+  padding: 2vh 2vw 4vh;
+}
+.todo__item {
+  margin: 0 auto;
+  background-color: var(--color-primary-light);
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo__item:not(:last-child) {
+  border-bottom: 1px solid var(--color-grey-dark);
+}
+.todo__item[data-id*=input] {
+  margin-bottom: 2rem;
+  flex-direction: column;
+  align-items: stretch;
+  padding: var(--padding-small) 0;
+}
+.todo__item--none {
+  min-height: 8vh;
+}
+.todo__input {
+  min-width: 25.8rem;
+  width: 80%;
+  align-self: center;
+  min-height: 8vh;
+  padding: var(--padding-small);
+  font-size: var(--font-small);
+  border: 1px solid var(--color-primary);
+  border-radius: 0.5rem;
+}
+.todo__input:focus {
+  border: 1px solid var(--color-secondary);
+}
+.todo__index {
+  text-align: center;
+  align-self: stretch;
+  flex: 10% 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.todo__complete {
+  flex: 8% 0 0;
+  align-self: stretch;
+  border-right: 1px solid var(--color-grey-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.todo__content {
+  flex-basis: 60%;
+  flex-grow: 1;
+  background-color: var(--color-primary);
+  align-self: center;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: var(--padding-small);
+}
+.todo__delete {
+  grid-column: -2/-1;
+  align-self: stretch;
+  border: none;
+  cursor: pointer;
+  flex-basis: 10%;
+  text-transform: capitalize;
+}
+.todo__required {
+  color: red;
+  padding-left: 10%;
+}
+.todo__reset {
+  text-transform: capitalize;
+  display: block;
+  padding: 2vmin;
+  margin-left: auto;
+  margin-right: 2vw;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s ease all;
+}
+.todo__reset:hover {
+  transform: perspective(15rem) translateZ(0.7rem);
+}
+
+.nav__list {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+.nav__item > .active {
+  color: var(--color-grey-dark);
+}
+.nav__link {
+  text-decoration: none;
+  color: var(--color-primary);
+  display: block;
+  padding: var(--padding-xsmall);
+  transition: 0.4s ease all;
+}
+.nav__link:hover {
+  color: var(--color-grey-dark);
+}
+
+.home,
+.about,
+.contact,
+.blog {
+  text-align: center;
+}
+.home__heading,
+.about__heading,
+.contact__heading,
+.blog__heading {
+  color: var(--color-primary);
+}
+.home__rotate,
+.about__rotate,
+.contact__rotate,
+.blog__rotate {
+  width: 7rem;
+  height: 7rem;
+  display: block;
+  border: 0.7rem solid var(--color-primary);
+  border-right: dotted;
+  border-radius: 50%;
+  animation: rotate-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rotate-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.home__relax,
+.about__relax,
+.contact__relax,
+.blog__relax {
+  min-height: 60vh;
+  min-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home__create-todo {
+  text-transform: capitalize;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--color-primary-dark);
+}
+.footer > p {
+  text-align: center;
+  min-height: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */
