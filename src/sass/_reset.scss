@@ -1,3 +1,7 @@
+/*BREAKPOINTS */
+$bp-medium: 37.5em;
+
+
 *,
 *::before,
 *::after {
@@ -17,12 +21,15 @@
  --color-secondary: mediumSeaGreen;
 
  ///PADDING
+ --padding-medium: 1.6rem 2.4rem;
+ --padding-reset: 1.2rem 1.4rem;
  --padding-small: 1.2rem;
  --padding-xsmall: .8rem 1.2rem;
  --padding-nav: 2rem 1.2rem;
 
  ///FONT
  --font-small: 1.8rem;
+ --font-xsmall: 1.4rem;
 }
 
 ::selection {
@@ -37,5 +44,18 @@ html {
 body {
     font-size: 1.6rem;
     color: #000000;
-    background-color: mediumSeaGreen
+    
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: mediumSeaGreen;
+    padding-top: 2vh; 
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    grid-auto-flow: row;
+    grid-auto-rows: min-content;
+    grid-gap: 2rem;
 }

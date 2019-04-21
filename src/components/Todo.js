@@ -4,10 +4,11 @@ import TodoList from './TodoList';
 
 
 const Todo = () => {
+    
     const [todos, setTodo] = useState([
-        {id: 1, content: "I will go to church"},
-        {id: 2, content: "I will go to market"},
-        {id: 3, content: "I will go to school"},
+        {id: 1, content: "I will ..."},
+        {id: 2, content: "I will ..."},
+        {id: 3, content: "I will ..."},
     ]);
     const [reset, setReset] = useState(false)
 
@@ -47,22 +48,37 @@ const Todo = () => {
         setValue(e.target.value)
     }
     const handleKeyPress = (e)=> {
-        if (e.which === 13) {
+        if ( (e.which === 13) && e.target.value) {
+            //Get value from DOM target
             setValue(e.target.value)
             const newTodo = [...todos, {id: todos.length + 1,  content: value}]
             setTodo(newTodo);
+            //SET VALUE and DOM target value BACK TO EMPTY STRING
             e.target.value="";
+            setValue("")
          }
     }
 
     const handleReset = (e) => {
+        let resetModal = document.getElementById("reset-modal__container");
         setReset(true)
-        setTodo("")
+        setTodo("");
+        //(resetModal.style.display="none") 
+        (resetModal.style.width= 0) 
+    }
+    const handleResetModal = (e)=> {
+        let resetModal = document.getElementById("reset-modal__container");
+        if (e.target.id === "reset__no") {
+        // (resetModal.style.display="none") 
+        (resetModal.style.width= 0) 
+        } else if (e.target.id === "todo-reset") {
+            // (resetModal.style.display="block") 
+            (resetModal.style.width= "100%") 
+            }
     }
 
     return (
         <div>
-        
             <TodoList todos={todos}
             handleChange={handleChange}
             handleClick={handleClick}
@@ -70,7 +86,9 @@ const Todo = () => {
             val={value}
             handleReset={handleReset}
             checked={checked}
-            handlechecked={handleChecked} />
+            handlechecked={handleChecked} 
+            handleResetModal={handleResetModal}
+            />
         </div>
     )
 }

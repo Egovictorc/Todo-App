@@ -12,7 +12,7 @@ import Blog from './Blog';
 const App = () => {
   return (
     <BrowserRouter>
-      <div>
+      <div className="container">
         <Navbar />
         
         <Route path="/About" component={About} />

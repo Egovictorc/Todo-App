@@ -1,6 +1,4 @@
-.container {
-    width: 100vw;
-}
+
 
 ///COMPONENTS
 .active {
@@ -11,15 +9,19 @@
     box-shadow: var(--box-shadow);
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: auto;
     //min-width: 36rem;
     width: 90vw;
-    min-height: 70vh;
+    min-height: 65vh;
     max-width: 70rem;
+    padding: 2vh 2vw;
     
     background-color: var(--color-grey-dark);
 
     &__list {
-        padding: 2vh 2vw 4vh;
+        &[data-list] {
+            margin-bottom: 4vh;
+        }
     }
 
     &__item {   
@@ -68,7 +70,7 @@
         
         text-align: center;
         align-self: stretch;
-        flex: 10% 0 0;
+        flex: 7% 0 0;
         //background-color: red;
         //border-right: 1px solid var(--color-grey-dark);
         ///VERTICALLY CENTER TODO INDEX
@@ -79,7 +81,7 @@
 
     &__complete {
         
-        flex: 8% 0 0;
+        flex: 7% 0 0;
         align-self: stretch;
         //background-color: red;
         border-right: 1px solid var(--color-grey-dark);
@@ -92,11 +94,12 @@
         flex-basis: 60%;
         flex-grow: 1;
         background-color: var(--color-primary);
-        align-self: center;
+        
         min-height: 8vh;
 
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         justify-content: center;
         padding-left: var(--padding-small);
     }
@@ -108,6 +111,7 @@
         cursor: pointer;
         flex-basis: 10%;    
         text-transform: capitalize;
+        background-color: var(--color-primary-light);
     }
 
     &__required {
@@ -116,11 +120,12 @@
     }
 
     &__reset {
+        background-color: var(--color-primary-light);
         text-transform: capitalize;
         display: block;
         padding: 2vmin;
         margin-left: auto;
-        margin-right: 2vw;
+        
         border: none;
         cursor: pointer;
         transition: .5s ease all;
@@ -140,13 +145,22 @@
 .nav {
     
     &__list {
+        margin-right: 5vw;
+        
         display: flex;
         justify-content: flex-end;
         list-style-type: none;
         
+        //@extendpadding: 4vh 6vw 4vh 0;
+        
+        
     }
     &__item {
         // ACTIVE LINK TAG (FOR REACTJS LINK)
+        
+        &:not(:last-child) {
+            border-right: 1px solid var(--color-primary);
+        }
         & > .active {
             color: var(--color-grey-dark);
         }
@@ -172,6 +186,7 @@
 
     &__heading {
         color: var(--color-primary);
+        line-height: 1.6;
     }
 
     &__rotate {
@@ -204,5 +219,55 @@
 .home {
     &__create-todo {
         text-transform: capitalize;
+        line-height: 1.6;
+    }
+}
+
+.modal__container {
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;    
+    transition: .1s ease width;
+    
+}
+.reset__modal{
+    
+    min-width: 38rem;
+    max-width: 50vw;
+    min-height: 30rem;
+    max-height: 40rem;
+    
+    transition-delay: .3s;
+
+    color: var(--color-primary);
+    margin: 25vh auto;
+    background-color: rgba(30, 136, 70, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+
+    &--yes,
+    &--no {
+        text-transform: capitalize;
+        border: none;
+        padding: var(--padding-medium);
+        
+
+        @media only screen and (max-width: $bp-medium) {
+            padding: var(--padding-reset);
+        }                
+    }
+
+    &--yes {
+        margin-right: 7vw;
+    }
+    &--no {
+        
     }
 }
