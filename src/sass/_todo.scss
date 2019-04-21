@@ -158,9 +158,6 @@
     &__item {
         // ACTIVE LINK TAG (FOR REACTJS LINK)
         
-        &:not(:last-child) {
-            border-right: 1px solid var(--color-primary);
-        }
         & > .active {
             color: var(--color-grey-dark);
         }
