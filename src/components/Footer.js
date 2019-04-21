@@ -5,7 +5,7 @@ const Footer = ()=> {
     return (
         <footer className="footer">
             <p>
-            Copyright &copy; 2019 &nbsp;<em>VICE </em>&nbsp; Concept. &nbsp; All rights reserved
+            Copyright &copy; 2019&nbsp;<em>VICE </em>&nbsp; Concept
             </p>
         </footer>
     )
